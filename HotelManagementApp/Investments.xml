@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<investments>
+	<investment>
+		<investmentCode>101</investmentCode>
+		<securityCode>001</securityCode>
+		<clientCode>201</clientCode>
+		<quotation>120.5</quotation>
+		<purchaseDate>2024-01-13</purchaseDate>
+		<saleDate>2024-02-20</saleDate>
+	</investment>
+	<investment>
+		<investmentCode>102</investmentCode>
+		<securityCode>002</securityCode>
+		<clientCode>202</clientCode>
+		<quotation>75.2</quotation>
+		<purchaseDate>2024-03-10</purchaseDate>
+		<saleDate>2024-04-15</saleDate>
+	</investment>
+	<!-- Добавьте другие инвестиции по аналогии -->
+</investments>

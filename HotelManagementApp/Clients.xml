@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<clients>
+	<client>
+		<clientCode>201</clientCode>
+		<name>ООО "Инвестиционная компания"</name>
+		<ownershipType>Частная компания</ownershipType>
+		<address>ул. Центральная, 123</address>
+		<phone>+7 (123) 456-7890</phone>
+	</client>
+	<client>
+		<clientCode>202</clientCode>
+		<name>ИП Иванов</name>
+		<ownershipType>Индивидуальное предприятие</ownershipType>
+		<address>ул. Солнечная, 456</address>
+		<phone>+7 (987) 654-3210</phone>
+	</client>
+	<!-- Добавьте других клиентов по аналогии -->
+</clients>

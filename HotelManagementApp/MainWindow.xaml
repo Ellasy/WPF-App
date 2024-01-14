@@ -1,0 +1,108 @@
+﻿<Window x:Class="HotelManagementApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hotel Management App" Height="600" Width="1215" MinWidth="500" MinHeight="600" SizeToContent="Manual">
+    <Window.Resources>
+        <!-- Основные цвета -->
+        <SolidColorBrush x:Key="PrimaryColor" Color="#B5D5CA"/>
+        <SolidColorBrush x:Key="SecondaryColor" Color="#E0A9AF"/>
+        <SolidColorBrush x:Key="LightTextColor" Color="#FFFFFF"/>
+        <SolidColorBrush x:Key="DarkTextColor" Color="#000000"/>
+        <!-- Дополнительные цвета -->
+        <SolidColorBrush x:Key="TableHeaderBackground" Color="#D1EEFC"/>
+        <SolidColorBrush x:Key="DataGridCellBackground" Color="#FFFCD6"/>
+
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource SecondaryColor}"/>
+            <Setter Property="Foreground" Value="{StaticResource LightTextColor}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="36"/>
+        </Style>
+
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="RowHeight" Value="40"/>
+            <Setter Property="RowBackground" Value="{StaticResource DataGridCellBackground}"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkTextColor}"/>
+        </Style>
+
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{StaticResource DarkTextColor}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0,5"/>
+        </Style>
+
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource DarkTextColor}"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="Foreground" Value="{StaticResource DarkTextColor}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+
+        <Style x:Key="DatePickerStyle" TargetType="DatePicker">
+            <Setter Property="Foreground" Value="{StaticResource DarkTextColor}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+
+        <Style x:Key="DataGridColumnHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Background" Value="{StaticResource TableHeaderBackground}"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkTextColor}"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="{StaticResource PrimaryColor}">
+        <!-- Логотип -->
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10"/>
+
+        <!-- Заголовок -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10"/>
+
+        <!-- Элементы интерфейса -->
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="Auto">
+            <Image Source="Logo.png" Width="50" Height="50" />
+            <TextBlock Text="Hotel Management App" FontSize="22" FontWeight="Bold" Foreground="{StaticResource LightTextColor}" HorizontalAlignment="Center" Margin="0,6,0,4"/>
+            <Button Content="Вывести все ценные бумаги" Click="ShowAllSecurities_Click" Style="{StaticResource CustomButtonStyle}"/>
+            <Button Content="Вывести инвестиции для клиента" Click="ShowInvestmentsForClient_Click" Style="{StaticResource CustomButtonStyle}"/>
+            <Button Content="Вывести информацию о клиенте по имени" Click="ShowClientInfoByName_Click" Style="{StaticResource CustomButtonStyle}" Margin="0,5,0,0"/>
+            <Label Content="Имя клиента:" Style="{StaticResource LabelStyle}" Margin="0,0,0,0"/>
+            <TextBox x:Name="txtClientName" Style="{StaticResource TextBoxStyle}" Margin="0,0,0,5"/>
+            <Button Content="Вывести инвестиции по дате" Click="ShowInvestmentsByDateRange_Click" Style="{StaticResource CustomButtonStyle}" Margin="0,5,0,0"/>
+            <Label Content="Начальная дата:" Style="{StaticResource LabelStyle}" Margin="0,0,0,0"/>
+            <DatePicker x:Name="dpStartDate" Style="{StaticResource DatePickerStyle}" Margin="0,0,0,0"/>
+            <Label Content="Конечная дата:" Style="{StaticResource LabelStyle}" Margin="0,0,0,0"/>
+            <DatePicker x:Name="dpEndDate" Style="{StaticResource DatePickerStyle}" Margin="0,0,0,5"/>
+            <Button Content="Вывести ценные бумаги с определенным рейтингом" Click="ShowSecuritiesByRating_Click" Style="{StaticResource CustomButtonStyle}" Margin="0,0,0,0"/>
+            <Label Content="Рейтинг:" Style="{StaticResource LabelStyle}" Margin="0,0,0,0"/>
+            <TextBox x:Name="txtRating" Style="{StaticResource TextBoxStyle}" Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <!-- Окно вывода результатов в виде DataGrid -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Здесь вы можете установить нужные вам высоты строк -->
+                <RowDefinition Height="*"/>
+                <!-- '*' занимает все доступное пространство -->
+            </Grid.RowDefinitions>
+
+            <!-- Ваши элементы интерфейса, которые должны быть вверху (логотип, заголовок и т.д.) -->
+
+            <DataGrid x:Name="DataGridResults" Style="{StaticResource DataGridStyle}" 
+                  ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" 
+                  AutoGenerateColumns="True" Grid.RowSpan="2" Margin="412,10,10,0" SelectionChanged="DataGridResults_SelectionChanged"/>
+
+            <!-- Другие элементы интерфейса, которые должны быть внизу -->
+        </Grid>
+        <TextBlock x:Name="NoDataMessage" Text="Данные не найдены" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Foreground="{StaticResource DarkTextColor}" Margin="432,52,0,0" Visibility="Collapsed"/>
+    </Grid>
+</Window>

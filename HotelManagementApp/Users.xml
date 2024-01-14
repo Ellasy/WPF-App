@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<users>
+  <user>
+    <login>user1</login>
+    <password>pass123</password>
+  </user>
+  <user>
+    <login>user2</login>
+    <password>pass456</password>
+  </user>
+  <user>
+    <login>123</login>
+    <password>826</password>
+  </user>
+  <user>
+    <login>123123</login>
+    <password>413412уыф</password>
+  </user>
+  <user>
+    <login>1</login>
+    <password>1</password>
+  </user>
+</users>

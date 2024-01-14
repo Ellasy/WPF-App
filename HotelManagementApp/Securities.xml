@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<securities>
+	<security>
+		<securityCode>001</securityCode>
+		<minTransactionAmount>1000</minTransactionAmount>
+		<rating>A</rating>
+		<yieldLastYear>5.2</yieldLastYear>
+		<additionalInfo>Описание ценной бумаги 1</additionalInfo>
+	</security>
+	<security>
+		<securityCode>002</securityCode>
+		<minTransactionAmount>500</minTransactionAmount>
+		<rating>B</rating>
+		<yieldLastYear>3.8</yieldLastYear>
+		<additionalInfo>Описание ценной бумаги 2</additionalInfo>
+	</security>
+	<!-- Добавьте другие ценные бумаги по аналогии -->
+</securities>
